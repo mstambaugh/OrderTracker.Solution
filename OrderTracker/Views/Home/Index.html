@@ -1,16 +1,7 @@
-@using OrderTracker.Models;
-
-<h1>Orders</h1>
-@if (Model.Count == 0)
-{
-<p>There are no pending orders.</p>
+@{
+Layout = "_Layout";
 }
-<ul>
-    @foreach (Order order in Model)
-    {
-    <li>@order.orderItem</li>
-    <li>@order.orderPrice</li>
-    }
 
-</ul>
-<a href="/orders/new">Add a new order.</a>
+<h1>Welcome to Order and Vendor Sumaries!</h1>
+<h3><a href='/vendors'>View categories</a></h3>
+<h3><a href='/vendors/new'>Add a new category</a></h3>

@@ -13,7 +13,7 @@ namespace OrderTracker.Models
         public Order(string orderItem, int orderPrice)
         {
             OrderItem = orderItem;
-            OrderPrice = orderPrice
+            OrderPrice = orderPrice;
             _instances.Add(this);
             Id = _instances.Count;
 
@@ -21,6 +21,10 @@ namespace OrderTracker.Models
         public static List<Order> GetAll()
         {
             return _instances;
+        }
+        public static void ClearAll()
+        {
+            _instances.Clear();
         }
         public static Order Find(int searchId)
         {
