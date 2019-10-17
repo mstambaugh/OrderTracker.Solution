@@ -9,9 +9,14 @@ namespace OrderTracker.Controllers
         [Route("/")]
         public ActionResult Index()
         {
-            Order firstOrder = new Order("Add first item to To Do List");
-            return View(firstOrder);
+            List<Order> allOrders = Order.GetAll();
+            return View(allOrders);
         }
-
+        [HttpPost("/items")]
+        public ActionResult Create(string orderItem)
+        {
+            Order myItem = new Order(orderItem);
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -4,7 +4,7 @@ namespace OrderTracker.Models
 {
     public class Order
     {
-        public string OrderName { get; set; }
+        public string OrderItem { get; set; }
 
         public int OrderPrice { get; set; }
         public int Id { get; }
@@ -12,9 +12,9 @@ namespace OrderTracker.Models
 
         public Order(string orderItem, int orderPrice)
         {
-            OrderName = orderItem;
-            _instances.Add(this);
+            OrderItem = orderItem;
             OrderPrice = orderPrice
+            _instances.Add(this);
             Id = _instances.Count;
 
         }
