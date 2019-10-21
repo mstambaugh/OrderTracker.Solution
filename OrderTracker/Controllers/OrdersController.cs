@@ -9,9 +9,10 @@ namespace OrderTracker.Controllers
         [HttpGet("/vendors/{vendorId}/orders/new")]
         public ActionResult New(int vendorId)
         {
-            Vendor category = Vendor.Find(vendorId);
+            Vendor vendor = Vendor.Find(vendorId);
             return View(vendor);
         }
+
         [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
         public ActionResult Show(int vendorId, int orderId)
         {
@@ -22,6 +23,7 @@ namespace OrderTracker.Controllers
             model.Add("vendor", vendor);
             return View(model);
         }
+
         [HttpPost("/orders/delete")]
         public ActionResult DeleteAll()
         {
