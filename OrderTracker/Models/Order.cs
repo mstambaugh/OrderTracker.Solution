@@ -6,14 +6,14 @@ namespace OrderTracker.Models
     {
         public string OrderItem { get; set; }
 
-        public string OrderPrice { get; set; }
+        // public string OrderPrice { get; set; }
         public int Id { get; }
         private static List<Order> _instances = new List<Order> { };
 
-        public Order(string orderItem, string orderPrice)
+        public Order(string orderItem)
         {
             OrderItem = orderItem;
-            OrderPrice = orderPrice;
+            // OrderPrice = orderPrice;
             _instances.Add(this);
             Id = _instances.Count;
 
